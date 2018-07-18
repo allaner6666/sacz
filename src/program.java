@@ -31,6 +31,7 @@ public class program {
 		switch(input){
 		case 1:
 			System.out.println("1");
+			showCurrentList();
 			break;
 			
 		case 2:
@@ -42,7 +43,6 @@ public class program {
 			break;
 			
 		case 9:
-
 			break;
 		default:
 			System.out.println("Invalid choice");

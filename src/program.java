@@ -7,13 +7,14 @@ public class program {
 	public static void main(String[] args){
 		boolean exit = false;
 		do {
-			showMenu();
-			int input = readInput();
+			program prog = new program();
+			prog.showMenu();
+			int input = prog.readInput();
 			if (input==9) exit=true;
 		} while (!exit);
 	}
 	
-	public static void showMenu(){
+	public void showMenu(){
 		System.out.println("Welcome to To Do List Application");
 		showCurrentList();
 		System.out.println("Menu: ");
@@ -25,7 +26,7 @@ public class program {
 		System.out.print("Enter your choice: ");
 	}
 	
-	public static int readInput(){
+	public int readInput(){
 		Scanner scanner = new Scanner(System.in);
 		int input=0;
 		try{
@@ -71,7 +72,7 @@ public class program {
 		}
 		return input;
 	}
-	public static void showItemAsComplete(String args)
+	public void showItemAsComplete(String args)
 	{
 		findITemInTheList(args);
 	}

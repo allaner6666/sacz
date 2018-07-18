@@ -3,7 +3,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class program {
-	static ArrayList<String> list = new ArrayList<String>();
+	public ArrayList<String> list = new ArrayList<String>();
 	public static void main(String[] args){
 		boolean exit = false;
 		do {
@@ -76,7 +76,7 @@ public class program {
 		findITemInTheList(args);
 	}
 	
-	public static void findITemInTheList(String itemtoFind)
+	public void findITemInTheList(String itemtoFind)
 	{
 		if (list.contains(itemtoFind))
 		{
@@ -87,19 +87,19 @@ public class program {
 		}
 	}
 	
-	public static int showCurrentList(){	
+	public int showCurrentList(){	
 		for (String s : list){
 			System.out.println(s);
 		}
 		return list.size();
 	}
 
-	public static boolean addNewItem(String string) {
+	public boolean addNewItem(String string) {
 		if(list.contains(string))   return false;
 		if(list.add(string))   return true;
 		return false;
 	}
-	public static boolean deleteItem(String item)
+	public boolean deleteItem(String item)
 	{
 		System.out.println(item);
 		if(list.isEmpty())

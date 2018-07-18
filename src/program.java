@@ -3,6 +3,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class program {
+	static ArrayList<String> list = new ArrayList<String>();
 	public static void main(String[] args){
 		boolean exit = false;
 		do {
@@ -53,7 +54,6 @@ public class program {
 	}
 	
 	public static void showCurrentList(){
-		ArrayList<String> list = new ArrayList<String>();
 		list.add("Fix bug no 1");
 		list.add("Fix bug no 2");
 		list.add("Fix bug no 3");

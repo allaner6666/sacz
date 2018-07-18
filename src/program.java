@@ -1,4 +1,4 @@
-
+import java.util.InputMismatchException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -27,7 +27,13 @@ public class program {
 	
 	public static int readInput(){
 		Scanner scanner = new Scanner(System.in);
-		int input = scanner.nextInt();
+		int input=0;
+		try{
+			input = scanner.nextInt();
+		}catch (InputMismatchException e){
+			System.out.println("Please enter integer");
+			scanner.next();
+		}
 		
 		switch(input){
 		case 1:
@@ -50,21 +56,19 @@ public class program {
 		default:
 			System.out.println("Invalid choice");
 		}
-		
-		
 		return input;
 	}
 	
-	public static void showCurrentList(){	
+	public static int showCurrentList(){	
 		for (String s : list){
 			System.out.println(s);
 		}
+		return list.size();
 	}
-	
 
-	public static boolean addNewItem(String inputstring){
-		if(list.contains(inputstring))	return false;
-		list.add(inputstring);
-		return true;
+	public static boolean addNewItem(String string) {
+		if(list.contains(string))   return false;
+		if(list.add(string))   return true;
+		return false;
 	}
 }

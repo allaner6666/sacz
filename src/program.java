@@ -27,7 +27,7 @@ public class program {
 	
 	public static int readInput(){
 		Scanner scanner = new Scanner(System.in);
-		int input = scanner.nextInt();	
+		int input = scanner.nextInt();
 		
 		switch(input){
 		case 1:
@@ -36,7 +36,7 @@ public class program {
 			break;
 			
 		case 2:
-			System.out.println("2");
+			addNewItem();
 			break;
 			
 		case 3:
@@ -61,6 +61,15 @@ public class program {
 		for (String s : list){
 			System.out.println(s);
 		}
-		
+	}
+	
+
+	public static boolean addNewItem(){
+		System.out.println("Pls key in new to-do string:");
+		Scanner scanner = new Scanner(System.in);
+		String inputstring = scanner.next();
+		if(list.contains(inputstring))	return false;
+		list.add(inputstring);
+		return true;
 	}
 }

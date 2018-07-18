@@ -36,7 +36,9 @@ public class program {
 			break;
 			
 		case 2:
-			addNewItem();
+			System.out.println("Pls key in new to-do string:");
+			String inputstring = scanner.next();
+			addNewItem(inputstring);
 			break;
 			
 		case 3:
@@ -53,21 +55,14 @@ public class program {
 		return input;
 	}
 	
-	public static void showCurrentList(){
-		list.add("Fix bug no 1");
-		list.add("Fix bug no 2");
-		list.add("Fix bug no 3");
-		
+	public static void showCurrentList(){	
 		for (String s : list){
 			System.out.println(s);
 		}
 	}
 	
 
-	public static boolean addNewItem(){
-		System.out.println("Pls key in new to-do string:");
-		Scanner scanner = new Scanner(System.in);
-		String inputstring = scanner.next();
+	public static boolean addNewItem(String inputstring){
 		if(list.contains(inputstring))	return false;
 		list.add(inputstring);
 		return true;

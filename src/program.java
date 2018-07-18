@@ -3,17 +3,18 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class program {
-	static ArrayList<String> list = new ArrayList<String>();
+	public ArrayList<String> list = new ArrayList<String>();
 	public static void main(String[] args){
 		boolean exit = false;
 		do {
-			showMenu();
-			int input = readInput();
+			program prog = new program();
+			prog.showMenu();
+			int input = prog.readInput();
 			if (input==9) exit=true;
 		} while (!exit);
 	}
 	
-	public static void showMenu(){
+	public void showMenu(){
 		System.out.println("Welcome to To Do List Application");
 		showCurrentList();
 		System.out.println("Menu: ");
@@ -25,7 +26,7 @@ public class program {
 		System.out.print("Enter your choice: ");
 	}
 	
-	public static int readInput(){
+	public int readInput(){
 		Scanner scanner = new Scanner(System.in);
 		int input=0;
 		try{
@@ -71,12 +72,12 @@ public class program {
 		}
 		return input;
 	}
-	public static void showItemAsComplete(String args)
+	public void showItemAsComplete(String args)
 	{
 		findITemInTheList(args);
 	}
 	
-	public static void findITemInTheList(String itemtoFind)
+	public void findITemInTheList(String itemtoFind)
 	{
 		if (list.contains(itemtoFind))
 		{
@@ -87,19 +88,19 @@ public class program {
 		}
 	}
 	
-	public static int showCurrentList(){	
+	public int showCurrentList(){	
 		for (String s : list){
 			System.out.println(s);
 		}
 		return list.size();
 	}
 
-	public static boolean addNewItem(String string) {
+	public boolean addNewItem(String string) {
 		if(list.contains(string))   return false;
 		if(list.add(string))   return true;
 		return false;
 	}
-	public static boolean deleteItem(String item)
+	public boolean deleteItem(String item)
 	{
 		System.out.println(item);
 		if(list.isEmpty())

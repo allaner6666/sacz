@@ -54,12 +54,37 @@ public class program {
 			deleteItem(item_name);
 			break;
 			
+		case 4:
+			System.out.println("4. Mark an item as complete");
+			System.out.println("----------------------------");
+			
+			System.out.println("Enter item to check: ");
+			Scanner tscan = new Scanner(System.in);
+			String s = tscan.nextLine();
+			showItemAsComplete(s);
+			break;
+			
 		case 9:
 			break;
 		default:
 			System.out.println("Invalid choice");
 		}
 		return input;
+	}
+	public static void showItemAsComplete(String args)
+	{
+		findITemInTheList(args);
+	}
+	
+	public static void findITemInTheList(String itemtoFind)
+	{
+		if (list.contains(itemtoFind))
+		{
+			System.out.println(itemtoFind + " was found in the list");
+			System.out.println(itemtoFind + " was marked complete");
+        } else {
+            System.out.println(itemtoFind + " was not found in the list");
+		}
 	}
 	
 	public static int showCurrentList(){	
@@ -68,14 +93,12 @@ public class program {
 		}
 		return list.size();
 	}
-<<<<<<< HEAD
 
 	public static boolean addNewItem(String string) {
 		if(list.contains(string))   return false;
 		if(list.add(string))   return true;
 		return false;
-=======
-	
+	}
 	public static boolean deleteItem(String item)
 	{
 		System.out.println(item);
@@ -87,6 +110,6 @@ public class program {
 		{
 			return list.remove(item);
 		}
->>>>>>> branch 'master' of https://github.com/allaner6666/sacz
+
 	}
 }

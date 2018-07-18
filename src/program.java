@@ -53,11 +53,7 @@ public class program {
 		return input;
 	}
 	
-	public static void showCurrentList(){
-		list.add("Fix bug no 1");
-		list.add("Fix bug no 2");
-		list.add("Fix bug no 3");
-		
+	public static void showCurrentList(){	
 		for (String s : list){
 			System.out.println(s);
 		}

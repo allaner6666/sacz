@@ -20,4 +20,10 @@ public class MyFirstTest {
 	public String delete(String title) {
 		return a.remove(title);
 	}
+	
+	public String markComplete(String Title) {
+		if(a.containsKey(Title))
+			return a.get(Title);
+		return null;
+	}
 }

@@ -46,7 +46,10 @@ public class program {
 			break;
 			
 		case 3:
-			System.out.println("3");
+			//System.out.println("3");
+			Scanner del_scan = new Scanner(System.in);
+			String item_name = del_scan.nextLine();
+			deleteItem(item_name);
 			break;
 			
 		case 9:
@@ -62,5 +65,18 @@ public class program {
 			System.out.println(s);
 		}
 		return list.size();
+	}
+	
+	public static boolean deleteItem(String item)
+	{
+		System.out.println(item);
+		if(list.isEmpty())
+		{
+			System.out.println("Item do not exist");
+			return false;
+		}else
+		{
+			return list.remove(item);
+		}
 	}
 }

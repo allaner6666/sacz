@@ -48,7 +48,10 @@ public class program {
 			break;
 			
 		case 3:
-			System.out.println("3");
+			//System.out.println("3");
+			Scanner del_scan = new Scanner(System.in);
+			String item_name = del_scan.nextLine();
+			deleteItem(item_name);
 			break;
 			
 		case 9:
@@ -65,10 +68,25 @@ public class program {
 		}
 		return list.size();
 	}
+<<<<<<< HEAD
 
 	public static boolean addNewItem(String string) {
 		if(list.contains(string))   return false;
 		if(list.add(string))   return true;
 		return false;
+=======
+	
+	public static boolean deleteItem(String item)
+	{
+		System.out.println(item);
+		if(list.isEmpty())
+		{
+			System.out.println("Item do not exist");
+			return false;
+		}else
+		{
+			return list.remove(item);
+		}
+>>>>>>> branch 'master' of https://github.com/allaner6666/sacz
 	}
 }

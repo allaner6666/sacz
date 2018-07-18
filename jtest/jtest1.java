@@ -7,6 +7,7 @@ public class jtest1 {
 	@Test
 	public void test_showlist() {
 		program mft = new program();
-		mft.showCurrentList();
+		int count=mft.showCurrentList();
+		assertTrue(count==0);
 	}
 }
